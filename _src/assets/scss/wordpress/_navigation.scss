@@ -1,0 +1,88 @@
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+
+/* =Main Navigation
+----------------------------------------------- */
+.main-navigation {
+	.menu-item {
+
+		// A customisation to Foundation's regular
+		// menu structure, allows clicking top level link
+		.menu-item-link {
+			display: inline-block;
+
+			a {
+				padding: $menu-items-padding;
+				display: inline-block;
+				line-height: 1rem;
+			}
+		}
+		.menu-item-toggle {
+			display: inline;
+			float: right;
+			height: rem-calc(38);
+		}
+	}
+
+	.is-active {
+		.menu-item-link > a {
+			color: $menu-item-color-active;
+			background: $menu-item-background-active;
+		}
+		.menu-item-toggle {
+			background: transparent;
+		}
+	}
+
+	.is-accordion-submenu {
+		padding-left: $global-padding;
+	}
+
+	.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {
+		padding-right: 1.2em;
+		&:after {
+			right: 13px;
+		}
+
+		@include breakpoint(large) {
+			padding-right: 1.5em;
+			&:after {
+				right: 15px;
+			}
+		}
+	}
+}
+
+
+/* =Post Navigation
+----------------------------------------------- */
+.nav-links {
+	max-width: $global-width;
+	margin: 0 auto 1.5em auto;
+	overflow: hidden;
+	padding: $global-padding 0;
+}
+.nav-previous {
+	float: left;
+	width: 50%;
+
+	a:before {
+		content: "\00ab";
+		margin-right: $global-margin;
+		font-size: 1.5rem;
+		line-height: 1rem;
+	}
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+
+	a:after {
+		content: "\00bb";
+		margin-left: $global-margin;
+		font-size: 1.5rem;
+		line-height: 1rem;
+	}
+}

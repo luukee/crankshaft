@@ -1,0 +1,26 @@
+/*
+Theme Name: Crankshaft
+Theme URI: http://underscores.me/
+Author: Zeeland Family
+Author URI: http://zeelandfamily.fi
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: crankshaft
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Crankshaft is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*
+	Add your custom styles here. Note: this file is not loaded by default! You MUST uncomment this line
+	in functions/scripts-and-styles.php:
+
+			// wp_enqueue_style( 'crankshaft-custom-style', get_stylesheet_uri() );
+
+ */

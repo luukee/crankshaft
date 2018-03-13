@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="crankshaft">Crankshaft</h1>
+
+<p>Hi. I&#8217;m a starter theme called <em>Crankshaft</em>, which stands for either <a href="http://zeelandfamily.fi">Zeeland Family</a> or <a href="https://foundation.zurb.com">Zurb Foundation</a>, whichever you prefer. I&#8217;m a theme meant for hacking so don&#8217;t use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That&#8217;s what I&#8217;m here for.</p>
+
+<p>My structure is 95% the same as _s by Automattic, but I integrate the <a href="http://foundation.zurb.com/sites/docs/starter-projects.html">Foundation Zurb Template</a>.</p>
+
+<p>Learn more about the Foundation framework by reading the <a href="http://foundation.zurb.com/sites/docs/">Foundation docs</a>.</p>
+
+<ul>
+<li>A just right amount of lean, well-commented, modern, HTML5 templates.</li>
+<li>A helpful 404 template.</li>
+<li>A custom header implementation in <code>functions/custom-header.php</code> just add the code snippet found in the comments of <code>functions/custom-header.php</code> to your <code>header.php</code> template.</li>
+<li>Custom template tags in <code>functions/template-tags.php</code> that keep your templates clean and neat and prevent code duplication.</li>
+<li>Some small tweaks in <code>functions/template-functions.php</code> that can improve your theming experience.</li>
+<li>The Foundation Framework (version 6.4) using the Foundation Zurb Template in the <code>_src</code> directory.</li>
+<li>Webpack / Babel for bundling JS.</li>
+<li>Licensed under GPLv2 or later. :) Use it to make something cool.</li>
+</ul>
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>To personalise your theme, download <code>crankshaft</code> from GitHub. The first thing you want to do is copy the <code>crankshaft</code> directory and change the name to something else (like, say, <code>megatherium</code>), and then you&#8217;ll need to do a five-step find and replace on the name in all the templates.</p>
+
+<ol>
+<li>Search for <code>'crankshaft'</code> (inside single quotations) to capture the text domain.</li>
+<li>Search for <code>crankshaft_</code> to capture all the function names.</li>
+<li>Search for <code>Text Domain: crankshaft</code> in style.css.</li>
+<li>Search for <code>&nbsp;Crankshaft</code> (with a space before it) to capture DocBlocks.</li>
+<li>Search for <code>crankshaft-</code> to capture prefixed handles.</li>
+</ol>
+
+<p>OR</p>
+
+<ul>
+<li>Search for: <code>'crankshaft'</code> and replace with: <code>'megatherium'</code></li>
+<li>Search for: <code>crankshaft_</code> and replace with: <code>megatherium_</code></li>
+<li>Search for: <code>Text Domain: crankshaft</code> and replace with: <code>Text Domain: megatherium</code> in style.css.</li>
+<li>Search for: <code>&nbsp; Crankshaft</code> (with a space before it) and replace with: <code>&nbsp;Megatherium</code></li>
+<li>Search for: <code>crankshaft-</code> and replace with: <code>megatherium-</code></li>
+</ul>
+
+<p>Then, update the stylesheet header in <code>style.css</code> and the links in <code>footer.php</code> with your own information. Next, update or delete this readme.</p>
+
+<p>There are two routes you can take for development, depending on whether you like Sass, Gulp and friends:</p>
+
+<h2 id="developmentusingcsswithoutsassorgulp">Development using CSS (without Sass or Gulp)</h2>
+
+<p>If you&#8217;re not into Sass or Gulp, just delete the _src directory and remove the comment from the beginning of this line in <code>functions/scripts-and-styles.php</code>:</p>
+
+<pre><code>	// wp_enqueue_style( 'crankshaft-custom-style', get_stylesheet_uri() );
+</code></pre>
+
+<p>You can then add your own custom styles into <code>style.css</code>.</p>
+
+<p>It is highly recommended that you create a custom version of the Foundation JS &amp; CSS using the <a href="http://foundation.zurb.com/sites/docs/style-sherpa.html">online configurator</a> so you have only what you need and nothing else. This will save users' bandwidth, time, batteries, money, headaches and reduce CO2 emissions. If you do this however, you need to do a couple of things after extracting the custom download:</p>
+
+<ul>
+<li>Move <code>css/foundation.min.css</code> from the custom package into <code>dist/assets/css/</code> and rename it to <code>app.css</code>.</li>
+<li>Move <code>js/vendor/foundation.min.js</code> from the custom package into <code>dist/assets/js/</code> and rename it to <code>app.js</code>.</li>
+</ul>
+
+<p>If you have any custom JS, I suggest creating a new file in <code>dist/assets/js</code> and enqueuing it the usual way in <code>functions/scripts-and-styles.php</code>.</p>
+
+<h2 id="developmentusingsassgulpandpaninitemplates">Development using Sass, Gulp and Panini templates</h2>
+
+<p>Requirements: Node and NPM. And a local WordPress development server (MAMP, XAMPP, Pressmatic, something else, it&#8217;s your choice).</p>
+
+<p>Set up a local WordPress development site, and take note of its URL, e.g. &#8216;example.dev&#8217;. Drop your theme in the themes directory and activate it. Edit <code>config.yml</code> and make sure the BROWSERSYNC options point to the right URL. This is also where you change options regarding which Foundation (and other) JS files should be concatenated, how the autoprefixer works etc.</p>
+
+<p>Run <code>npm install</code> in your theme directory. Go make a cup of tea while this is happening. Then run <code>npm start</code> and start developing!</p>
+
+<h3 id="compilingassetsforproduction">Compiling assets for production</h3>
+
+<p>VERY IMPORTANT: Run <code>npm run build</code> to compile compressed, production-ready CSS and JS, or make sure your deployment process does this for you. Otherwise you&#8217;ll end up with ridiculously large CSS and JS files and your clients will call you on a Saturday evening when you&#8217;re trying to enjoy a beer with your friends.</p>
+
+<h2 id="includingexcludingjavascript">Including / Excluding JavaScript</h2>
+
+<p>The main entry point to the theme JavaScript is in <code>_src/assets/js/app.js</code>. Adding your own code follows similar logic to SCSS files:</p>
+
+<h3 id="customizewhichfoundationpluginsyouwant">Customize which Foundation plugins you want</h3>
+
+<p>You probably only want a subset of Foundation for your project. To prevent a module from being loaded, open <code>_src/assets/js/lib/foundation-explicit-pieces</code> in your text editor and comment out both the import line at the top and the initialization line at the end of the file. For example, if you don&#8217;t need the AccordionMenu component, comment out this:</p>
+
+<pre><code>import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
+</code></pre>
+
+<p>and this:</p>
+
+<pre><code>Foundation.plugin(AccordionMenu, 'AccordionMenu');
+</code></pre>
+
+<h3 id="addingcustomjavascript">Adding custom JavaScript</h3>
+
+<ul>
+<li>Create a new file for each feature inside <code>_src/assets/js/app.js</code>.</li>
+<li>Import it into app.js like so <code>import './my-custom-feature';</code> and use ES6 imports to add the required depencies such as jQuery (see app.js for an example.</li>
+<li>You can also add completely separate JS files to be copied as-is into <code>_src/assets/wp-js</code>. Do this if you only want to conditionally load them in WordPress based on page etc.</li>
+</ul>
+
+<h3 id="developinghtmlmockupswithoutawordpressinstallation">Developing HTML mockups without a WordPress installation</h3>
+
+<p>If you prefer to start development by building HTML mockups, you can build your templates in <code>_src/pages</code> and <code>_src/partials</code> and change the BROWSERSYNC type setting in <code>config.yml</code> to <code>html</code>. Browsersync will start up a simple static file server at localhost:8000 and refresh every time you make a change to your Sass, JS or HTML template files. The benefit of this is you can get going faster without the overhead of a WP site running locally, and it&#8217;s easier to include front-end devs in your team who might not have a local server setup or WordPress experience.</p>
+
+<p>Read more about the Panini template language in the <a href="http://foundation.zurb.com/sites/docs/panini.html">Panini docs on the Foundation site</a>.</p>
+
+<h3 id="styleguides">Styleguides!</h3>
+
+<p>You can build a styleguide within your theme in <code>_src/styleguide/</code>, extremely handy when passing on development to new theme members. <a href="http://foundation.zurb.com/sites/docs/style-sherpa.html">Instructions for how to edit the styleguide on the Foundation site</a>. The BROWSERSYNC value in <code>config.yml</code> needs to be set to <code>html</code> and you can view your guide at <code>localhost:8000/styleguide.html</code>.</p>
+
+<h2 id="additionalresources">Additional resources</h2>
+
+<ul>
+<li>For a very comprehensive explanation of the Foundation Zurb template structure, see https://zendev.com/2017/09/05/front-end-development-kickstarter-zurb-template.html</li>
+</ul>
+
+</body>
+</html>
+
