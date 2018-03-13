@@ -1,6 +1,6 @@
 # Crankshaft
 
-Hi. I'm a starter theme called <em>Crankshaft</em>, which stands for either <a href="http://zeelandfamily.fi">Zeeland Family</a> or <a href="https://foundation.zurb.com">Zurb Foundation</a>, whichever you prefer. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a theme called <em>Crankshaft</em>, which stands for <a href="http://www.crankshaftstudio.com/">Crankshaft Studio</a>.
 
 My structure is 95% the same as _s by Automattic, but I integrate the <a href="http://foundation.zurb.com/sites/docs/starter-projects.html">Foundation Zurb Template</a>.
 
@@ -15,9 +15,7 @@ Learn more about the Foundation framework by reading the <a href="http://foundat
 * Webpack / Babel for bundling JS.
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
-## Getting Started
-
-To personalise your theme, download `crankshaft` from GitHub. The first thing you want to do is copy the `crankshaft` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+## Naming
 
 1. Search for `'crankshaft'` (inside single quotations) to capture the text domain.
 2. Search for `crankshaft_` to capture all the function names.
